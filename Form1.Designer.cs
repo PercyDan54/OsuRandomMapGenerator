@@ -37,11 +37,12 @@ namespace RandomMap
             this.length = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.xGridNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.saveToOszCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bpm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xGridNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -136,27 +137,27 @@ namespace RandomMap
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.numericUpDown1.Increment = new decimal(new int[] {
+            this.xGridNumericUpDown.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.xGridNumericUpDown.Increment = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(149, 127);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.xGridNumericUpDown.Location = new System.Drawing.Point(149, 127);
+            this.xGridNumericUpDown.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.xGridNumericUpDown.Minimum = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.xGridNumericUpDown.Name = "xGridNumericUpDown";
+            this.xGridNumericUpDown.Size = new System.Drawing.Size(120, 23);
+            this.xGridNumericUpDown.TabIndex = 8;
+            this.xGridNumericUpDown.Value = new decimal(new int[] {
             96,
             0,
             0,
@@ -171,12 +172,23 @@ namespace RandomMap
             this.label4.TabIndex = 7;
             this.label4.Text = "X Grid";
             // 
+            // checkBox1
+            // 
+            this.saveToOszCheckBox.AutoSize = true;
+            this.saveToOszCheckBox.Location = new System.Drawing.Point(26, 166);
+            this.saveToOszCheckBox.Name = "saveToOszCheckBox";
+            this.saveToOszCheckBox.Size = new System.Drawing.Size(83, 21);
+            this.saveToOszCheckBox.TabIndex = 10;
+            this.saveToOszCheckBox.Text = "导出为osz";
+            this.saveToOszCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 450);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.saveToOszCheckBox);
+            this.Controls.Add(this.xGridNumericUpDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.length);
@@ -192,7 +204,7 @@ namespace RandomMap
             this.Text = "切指图生成";
             ((System.ComponentModel.ISupportInitialize)(this.bpm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.length)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xGridNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +219,9 @@ namespace RandomMap
         private System.Windows.Forms.NumericUpDown length;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown xGridNumericUpDown;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox saveToOszCheckBox;
     }
 }
 

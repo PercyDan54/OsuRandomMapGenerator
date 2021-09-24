@@ -2,7 +2,7 @@
 {
     public class Direction
     {
-        private int n;
+        public int n;
 
         private void simplify()
         {

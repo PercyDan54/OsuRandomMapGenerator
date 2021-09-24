@@ -16,7 +16,8 @@ namespace RandomMap
             seed = string.IsNullOrWhiteSpace(textBox1.Text) ? -1 : seed;
             var total = (int)length.Value;
             length.Value = total = total / 4 * 4;
-            RandomMapGen.Gen(seed, (int)bpm.Value, total, (int)numericUpDown1.Value);
+            RandomMapGen.Gen(seed, (int)bpm.Value, total, (int)xGridNumericUpDown.Value, saveToOszCheckBox.Checked);
+            MessageBox.Show(@"生成完成", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
