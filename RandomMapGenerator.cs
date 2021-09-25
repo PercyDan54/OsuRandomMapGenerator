@@ -5,20 +5,28 @@ using System.Linq;
 
 namespace RandomMap
 {
-    public class RandomMapGen
+    public class RandomMapGenerator
     {
         public static int XGrid = 96;
         public static int YGrid => (int)Math.Round(XGrid * Math.Sin(Math.PI / 3));
+        public static double Ar;
+        public static double Od;
 
-        public static void Gen(int seed, int beatLength, int total, int xGrid, bool saveToOsz)
+        public static void Generate(int seed, double leng, int total, int xGrid)
         {
             XGrid = xGrid;
+
             var random = seed < 0 ? new Random() : new Random(seed);
-            var ar = Math.Round((1200f - (float)beatLength/ 85 * 600) / 750 * 5 + 5, 2).ToString();
-            var od = Math.Round((1200f - (float)beatLength / 85 * 600) / 750 * 5 + 4, 2).ToString();
-            beatLength *= 4;
+            var beatLength = leng * 4;
+            var title = Form1.Instance.titleTextBox.Text;
+            var creator = Form1.Instance.creatorTextBox.Text;
+            var artist = Form1.Instance.artistTextBox.Text;
+            var ar = Math.Round(Form1.Instance.arNumericUpDown.Value, 1);
+            var od = Math.Round(Form1.Instance.odNumericUpDown.Value, 1);
+            var cs = Math.Round(Form1.Instance.csNumericUpDown.Value, 1);
+            var hp = Math.Round(Form1.Instance.hpNumericUpDown.Value, 1);
             var version = $"NC {90000f / beatLength:F3}BPM seed {seed}";
-            var filename = $"obless_noob - mute (SCORE V2 SUCKS) [{version}]";
+            var filename = $"{artist} - {title} ({creator}) [{version}]";
 
             using (var file = new StreamWriter($"{filename}.osu", false))
             {
@@ -35,26 +43,18 @@ Mode: 0
 LetterboxInBreaks: 0
 WidescreenStoryboard: 1
 
-[Editor]
-DistanceSpacing: 1
-BeatDivisor: 4
-GridSize: 32
-TimelineZoom: 3
-
 [Metadata]
-Title: mute
-TitleUnicode: mute
-Artist: obless_noob
-ArtistUnicode: obless_noob
-Creator: SCORE V2 SUCKS
+Title: {title}
+Artist: {artist}
+Creator: {creator}
 Version: {version}
 BeatmapID:0
 BeatmapSetID:-1"
                 );
                 file.Write($@"
 [Difficulty]
-HPDrainRate:6
-CircleSize:4
+HPDrainRate:{hp}
+CircleSize:{cs}
 OverallDifficulty:{od}
 ApproachRate:{ar}
 ");
@@ -88,14 +88,14 @@ ApproachRate:{ar}
 
                 var i = 0;
 
-                void writecircle(Pos pos, int time, int nc = 0, string[] hs = null)
+                void writecircle(Pos pos, double time, int nc = 0, string[] hs = null)
                 {
                     hs ??= defaultHs.ToArray();
                     file.WriteLine($"{pos.X},{pos.Y},{time},{1 + nc * 4},{hs[0]},{hs[1]}");
                     i++;
                 }
 
-                void writeslider(Pos pos1, Pos pos2, int time, int nc = 0, string[] hs1 = null, string[] hs2 = null)
+                void writeslider(Pos pos1, Pos pos2, double time, int nc = 0, string[] hs1 = null, string[] hs2 = null)
                 {
                     hs1 ??= defaultHs.ToArray();
                     hs2 ??= defaultHs.ToArray();
@@ -251,7 +251,7 @@ ApproachRate:{ar}
                 }
             }
 
-            if (saveToOsz)
+            if (Form1.Instance.saveToOszCheckBox.Checked)
             {
                 using var zip = ZipFile.Open($"{filename}.osz", ZipArchiveMode.Update);
 

@@ -1,4 +1,4 @@
-﻿using static RandomMap.RandomMapGen;
+﻿using static RandomMap.RandomMapGenerator;
 
 namespace RandomMap
 {
