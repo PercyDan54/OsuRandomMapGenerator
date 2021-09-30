@@ -56,6 +56,7 @@ namespace RandomMap
             this.label10 = new System.Windows.Forms.Label();
             this.artistTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.bpm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xGridNumericUpDown)).BeginInit();
@@ -63,12 +64,14 @@ namespace RandomMap
             ((System.ComponentModel.ISupportInitialize)(this.arNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.odNumericUpDown)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 22);
+            this.label1.Location = new System.Drawing.Point(18, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 0;
@@ -76,15 +79,16 @@ namespace RandomMap
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 19);
+            this.textBox1.Location = new System.Drawing.Point(128, 18);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 23);
+            this.textBox1.Size = new System.Drawing.Size(141, 23);
             this.textBox1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 184);
+            this.label2.Location = new System.Drawing.Point(18, 180);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 2;
@@ -94,14 +98,14 @@ namespace RandomMap
             // 
             this.bpm.DecimalPlaces = 1;
             this.bpm.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.bpm.Location = new System.Drawing.Point(149, 182);
+            this.bpm.Location = new System.Drawing.Point(128, 178);
             this.bpm.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.bpm.Name = "bpm";
-            this.bpm.Size = new System.Drawing.Size(120, 23);
+            this.bpm.Size = new System.Drawing.Size(141, 23);
             this.bpm.TabIndex = 3;
             this.bpm.Value = new decimal(new int[] {
             85,
@@ -118,7 +122,7 @@ namespace RandomMap
             0,
             0,
             0});
-            this.length.Location = new System.Drawing.Point(149, 222);
+            this.length.Location = new System.Drawing.Point(128, 218);
             this.length.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -130,7 +134,7 @@ namespace RandomMap
             0,
             0});
             this.length.Name = "length";
-            this.length.Size = new System.Drawing.Size(120, 23);
+            this.length.Size = new System.Drawing.Size(141, 23);
             this.length.TabIndex = 5;
             this.length.Value = new decimal(new int[] {
             1024,
@@ -141,7 +145,8 @@ namespace RandomMap
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 222);
+            this.label3.Location = new System.Drawing.Point(18, 220);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 4;
@@ -165,7 +170,7 @@ namespace RandomMap
             0,
             0,
             0});
-            this.xGridNumericUpDown.Location = new System.Drawing.Point(149, 262);
+            this.xGridNumericUpDown.Location = new System.Drawing.Point(128, 258);
             this.xGridNumericUpDown.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -177,7 +182,7 @@ namespace RandomMap
             0,
             0});
             this.xGridNumericUpDown.Name = "xGridNumericUpDown";
-            this.xGridNumericUpDown.Size = new System.Drawing.Size(120, 23);
+            this.xGridNumericUpDown.Size = new System.Drawing.Size(141, 23);
             this.xGridNumericUpDown.TabIndex = 8;
             this.xGridNumericUpDown.Value = new decimal(new int[] {
             96,
@@ -188,9 +193,10 @@ namespace RandomMap
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 262);
+            this.label4.Location = new System.Drawing.Point(18, 260);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.Size = new System.Drawing.Size(45, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "X Grid";
             // 
@@ -343,16 +349,17 @@ namespace RandomMap
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(149, 60);
+            this.titleTextBox.Location = new System.Drawing.Point(128, 58);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(120, 23);
+            this.titleTextBox.Size = new System.Drawing.Size(141, 23);
             this.titleTextBox.TabIndex = 20;
             this.titleTextBox.Text = "mute";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 63);
+            this.label9.Location = new System.Drawing.Point(18, 60);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 17);
             this.label9.TabIndex = 19;
@@ -360,16 +367,17 @@ namespace RandomMap
             // 
             // creatorTextBox
             // 
-            this.creatorTextBox.Location = new System.Drawing.Point(149, 100);
+            this.creatorTextBox.Location = new System.Drawing.Point(128, 98);
             this.creatorTextBox.Name = "creatorTextBox";
-            this.creatorTextBox.Size = new System.Drawing.Size(120, 23);
+            this.creatorTextBox.Size = new System.Drawing.Size(141, 23);
             this.creatorTextBox.TabIndex = 22;
             this.creatorTextBox.Text = "SCORE V2 SUCKS";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 100);
+            this.label10.Location = new System.Drawing.Point(18, 100);
+            this.label10.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 17);
             this.label10.TabIndex = 21;
@@ -377,32 +385,62 @@ namespace RandomMap
             // 
             // artistTextBox
             // 
-            this.artistTextBox.Location = new System.Drawing.Point(149, 138);
+            this.artistTextBox.Location = new System.Drawing.Point(128, 138);
             this.artistTextBox.Name = "artistTextBox";
-            this.artistTextBox.Size = new System.Drawing.Size(120, 23);
+            this.artistTextBox.Size = new System.Drawing.Size(141, 23);
             this.artistTextBox.TabIndex = 24;
             this.artistTextBox.Text = "obless_noob";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 138);
+            this.label11.Location = new System.Drawing.Point(18, 140);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(32, 17);
             this.label11.TabIndex = 23;
             this.label11.Text = "曲师";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.artistTextBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.creatorTextBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.titleTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bpm, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.xGridNumericUpDown, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.length, 1, 5);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(15);
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(317, 290);
+            this.tableLayoutPanel1.TabIndex = 25;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 524);
-            this.Controls.Add(this.artistTextBox);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.creatorTextBox);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.titleTextBox);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.hpNumericUpDown);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.odNumericUpDown);
@@ -412,15 +450,7 @@ namespace RandomMap
             this.Controls.Add(this.csNumericUpDown);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.saveToOszCheckBox);
-            this.Controls.Add(this.xGridNumericUpDown);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.length);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.bpm);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -433,6 +463,8 @@ namespace RandomMap
             ((System.ComponentModel.ISupportInitialize)(this.arNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.odNumericUpDown)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,6 +498,7 @@ namespace RandomMap
         public System.Windows.Forms.CheckBox saveToOszCheckBox;
         public System.Windows.Forms.NumericUpDown csNumericUpDown;
         public System.Windows.Forms.NumericUpDown hpNumericUpDown;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
