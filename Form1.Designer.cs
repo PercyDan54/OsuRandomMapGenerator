@@ -99,8 +99,13 @@ namespace RandomMap
             this.bpm.DecimalPlaces = 1;
             this.bpm.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.bpm.Location = new System.Drawing.Point(128, 178);
+            this.bpm.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.bpm.Minimum = new decimal(new int[] {
-            1,
+            60,
             0,
             0,
             0});

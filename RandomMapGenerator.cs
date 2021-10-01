@@ -12,12 +12,12 @@ namespace RandomMap
         public static double Ar;
         public static double Od;
 
-        public static void Generate(int seed, double leng, int total, int xGrid)
+        public static void Generate(int seed, double bpm, int total, int xGrid)
         {
             XGrid = xGrid;
 
             var random = seed < 0 ? new Random() : new Random(seed);
-            var beatLength = leng * 4;
+            var beatLength = 90000 / bpm;
             var title = Form1.Instance.titleTextBox.Text;
             var creator = Form1.Instance.creatorTextBox.Text;
             var artist = Form1.Instance.artistTextBox.Text;
@@ -25,7 +25,7 @@ namespace RandomMap
             var od = Math.Round(Form1.Instance.odNumericUpDown.Value, 1);
             var cs = Math.Round(Form1.Instance.csNumericUpDown.Value, 1);
             var hp = Math.Round(Form1.Instance.hpNumericUpDown.Value, 1);
-            var version = $"NC {90000f / beatLength:F3}BPM seed {seed}";
+            var version = $"NC {bpm}BPM seed {seed}";
             var filename = $"{artist} - {title} ({creator}) [{version}]";
 
             using (var file = new StreamWriter($"{filename}.osu", false))
@@ -66,6 +66,7 @@ ApproachRate:{ar}
 [TimingPoints]
 ");
                 file.Write($"0,{beatLength},4,2,0,100,1,0\n\n");
+                beatLength /= 4;
                 file.WriteLine("[HitObjects]");
 
                 var d = new Direction(random.Next(0, 5));
@@ -126,14 +127,14 @@ ApproachRate:{ar}
 
                             if (p1.IsInField && p2.IsInField && p3.IsInField)
                             {
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = (p0 * 3 + p1) / 4;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = (p0 + p1) / 2;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = (p0 + p1 * 3) / 4;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
-                                writeslider(p1, p2, i * leng, nc, autohs(i), autohs(i + 2));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writeslider(p1, p2, i * beatLength, nc, autohs(i), autohs(i + 2));
                                 d = d3;
                                 p = p3;
                                 i++;
@@ -154,9 +155,9 @@ ApproachRate:{ar}
 
                             if (p1.IsInField && p2.IsInField)
                             {
-                                writecircle(p0, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
-                                writecircle(p0, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
-                                writeslider(p0, p1, i * leng, i % 8 == 0 ? 1 : 0, autohs(i), autohs(i + 2));
+                                writecircle(p0, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p0, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writeslider(p0, p1, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i), autohs(i + 2));
                                 d = d2;
                                 p = p2;
                                 i++;
@@ -177,7 +178,7 @@ ApproachRate:{ar}
 
                             if (p1.IsInField && p2.IsInField)
                             {
-                                writeslider(p0, p1, i * leng, i % 8 == 0 ? 1 : 0, autohs(i), autohs(i + 2));
+                                writeslider(p0, p1, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i), autohs(i + 2));
                                 p = p2;
                                 d = d2;
                                 i++;
@@ -198,15 +199,15 @@ ApproachRate:{ar}
 
                             if (p1.IsInField && p2.IsInField)
                             {
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = (p0 * 3 + p1) / 4;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = (p0 + p1) / 2;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = (p0 + p1 * 3) / 4;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 p = p1;
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 d = d2;
                                 p = p2;
                                 i++;
@@ -224,9 +225,9 @@ ApproachRate:{ar}
 
                             if (p1.IsInField)
                             {
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
-                                writecircle(p, i * leng, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
+                                writecircle(p, i * beatLength, i % 8 == 0 ? 1 : 0, autohs(i));
                                 d = d1;
                                 p = p1;
                                 i++;
@@ -242,7 +243,7 @@ ApproachRate:{ar}
 
                         if (p1.IsInField)
                         {
-                            writecircle(p, i * leng, nc, autohs(i));
+                            writecircle(p, i * beatLength, nc, autohs(i));
                             d = d1;
                             p = p1;
                             i++;
